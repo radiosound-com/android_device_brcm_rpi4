@@ -5,3 +5,6 @@ on init
 
 on fs
     mount_all /vendor/etc/fstab.rpi4
+
+on property:sys.audio_streaming=1
+    exec u:r:shell:s0 -- /system/bin/sh /vendor/bin/a2b.sh

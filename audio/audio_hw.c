@@ -158,6 +158,8 @@ static int start_output_stream(struct alsa_stream_out *out)
         return -ENODEV;
     }
 
+    property_set("sys.audio_streaming", "1");
+
     adev->active_output = out;
     return 0;
 }
@@ -208,6 +210,8 @@ static int out_set_format(struct audio_stream *stream, audio_format_t format)
 static int do_output_standby(struct alsa_stream_out *out)
 {
     struct alsa_audio_device *adev = out->dev;
+
+    return -ENOSYS;
 
     if (!out->standby) {
         pcm_close(out->pcm);
@@ -513,7 +517,7 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
 
     out->config.channels = CHANNEL_STEREO;
     out->config.rate = CODEC_SAMPLING_RATE;
-    out->config.format = PCM_FORMAT_S16_LE;
+    out->config.format = PCM_FORMAT_S32_LE;
     out->config.period_size = PERIOD_SIZE;
     out->config.period_count = PLAYBACK_PERIOD_COUNT;
 
@@ -533,6 +537,8 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
     out->standby = 1;
     out->unavailable = false;
 
+    property_set("sys.audio_streaming", "0");
+
     config->format = out_get_format(&out->stream.common);
     config->channel_mask = out_get_channels(&out->stream.common);
     config->sample_rate = out_get_sample_rate(&out->stream.common);
@@ -549,6 +555,7 @@ static void adev_close_output_stream(struct audio_hw_device *dev,
         struct audio_stream_out *stream)
 {
     ALOGV("adev_close_output_stream...");
+    property_set("sys.audio_streaming", "0");
     free(stream);
 }
 

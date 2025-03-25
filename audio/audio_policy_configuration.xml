@@ -20,29 +20,29 @@
             <defaultOutputDevice>Speaker</defaultOutputDevice>
             <mixPorts>
                 <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_PRIMARY">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
                 <mixPort name="primary input" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
                 </mixPort>
             </mixPorts>
             <devicePorts>
                 <devicePort tagName="Speaker" type="AUDIO_DEVICE_OUT_SPEAKER" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>
                 <devicePort tagName="Wired Headset" type="AUDIO_DEVICE_OUT_WIRED_HEADSET" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>
                 <devicePort tagName="Wired Headphones" type="AUDIO_DEVICE_OUT_WIRED_HEADPHONE" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
                              samplingRates="48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>

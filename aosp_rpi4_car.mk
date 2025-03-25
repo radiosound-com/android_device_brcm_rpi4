@@ -86,7 +86,11 @@ PRODUCT_PACKAGES += \
     BluetoothRpiOverlay \
     CarServiceRpiOverlay \
     SettingsProviderRpiOverlay \
-    WifiRpiOverlay
+    WifiRpiOverlay \
+    i2cdetect \
+    i2cget \
+    i2cdump \
+    i2cset
 
 # Permissions
 PRODUCT_COPY_FILES += \

@@ -47,7 +47,7 @@ ro.soc.manufacturer=Broadcom
 ro.soc.model=BCM2711
 
 # Display
-debug.drm.mode.force=1920x1080
+debug.drm.mode.force=1280x800
 
 # FFmpeg
 persist.ffmpeg_codec2.rank.audio=16
@@ -82,3 +82,5 @@ wifi.interface=wlan0
 
 # Window extensions
 persist.settings.large_screen_opt.enabled=true
+
+persist.adb.tcp.port=5555

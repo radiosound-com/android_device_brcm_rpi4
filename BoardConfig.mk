@@ -31,7 +31,7 @@ BOARD_LIBCAMERA_PIPELINES := rpi/vc4
 BOARD_LIBCAMERA_USES_MESON_BUILD := true
 
 # Display
-TARGET_SCREEN_DENSITY := 240
+TARGET_SCREEN_DENSITY := 150
 
 # Graphics
 BOARD_MESA3D_BUILD_LIBGBM := true
@@ -42,7 +42,7 @@ BOARD_MESA3D_VULKAN_DRIVERS := broadcom
 # Kernel
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 no_console_suspend root=/dev/ram0 rootwait androidboot.hardware=rpi4
+BOARD_KERNEL_CMDLINE := root=/dev/ram0 rootwait androidboot.hardware=rpi4 ro.boot.verifiedbootstate=orange
 
 # Manifest
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/framework_compatibility_matrix.xml
@@ -86,3 +86,5 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+BUILD_BROKEN_DUP_RULES := true

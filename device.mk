@@ -296,5 +296,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml
 
+# A2B
+PRODUCT_PACKAGES += \
+    a2b.sh
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/a2b_sh/a2b.sh:$(TARGET_COPY_OUT_VENDOR)/bin/a2b.sh
+
 # Window extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)

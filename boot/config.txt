@@ -6,7 +6,8 @@ kernel=Image
 initramfs ramdisk.img followkernel
 
 # Audio
-dtparam=audio=on
+# dwf: disable onboard audio
+dtparam=audio=off
 
 # Camera
 camera_auto_detect=1
@@ -21,19 +22,24 @@ disable_overscan=1
 # Display panel
 #dtoverlay=vc4-kms-dsi-7inch
 #dtoverlay=vc4-kms-dsi-ili9881-7inch
+dtoverlay=vc4-kms-dsi-waveshare-panel,10_1_inch
+
+# dwf: add simple sound card to output I2S to AD242x
+dtoverlay=rpi-ad242x
 
 # Graphics acceleration
 disable_fw_kms_setup=1
-dtoverlay=vc4-kms-v3d
+# dwf: disable hdmi audio
+dtoverlay=vc4-kms-v3d,noaudio
 
 # I2C
-#dtparam=i2c_arm=on
+dtparam=i2c_arm=on
 
 # I2S
-#dtparam=i2s=on
+dtparam=i2s=on
 
 # Serial console
-enable_uart=1
+enable_uart=0
 
 # SPI
 #dtparam=spi=on
